@@ -254,36 +254,32 @@
 
 => Create a Student Class: Create a Student class with attributes like name, age, and grade. Write a method to display the student's details. Create multiple objects and display their details.
 
-class intro{
+class Student{
 
     String name;
     int age;
     String grade;
 
-    intro(String name, int age, String grade){
+    public void display(String name, int age, String grade){
         this.name = name;
         this.age = age;
         this.grade = grade;
-    }
-
-    public void display(){
         System.out.println(name + " " + age + " " + grade);
     }
-    
 }
 
-class student{
+class studentCheck{
     public static void main(String[] args) {
-        intro st1 = new intro("Gaurav",22,"A");
-        intro st2 = new intro("Varun",20,"B");
-        intro st3 = new intro("Tarun",22,"C");
+        Student st1 = new Student();
+        Student st2 = new Student();
+        Student st3 = new Student();
         
         System.out.print("First Student : ");
-        st1.display();
+        st1.display("Gaurav",22,"A");
         System.out.print("Second Student : ");
-        st2.display();
+        st2.display("Varun",20,"B");
         System.out.print("Third Student : ");
-        st3.display();
+        st3.display("Tarun",22,"C");
     }
 }
 
@@ -345,21 +341,19 @@ public class Rectangle {
     }
 
     public int calculateArea() {
-        return length * width;
+        double area = length * width;
+        System.out.println(" the area of a rectangle is : " + area);
     }
 
     public int calculatePerimeter() {
-        return 2 * (length + width);
-    }
-
-    public void displayDetails() {
-        System.out.println("Area of Rectangle : " + calculateArea());
-        System.out.println("Perimeter of Rectangle : " + calculatePerimeter());
+        double perimeter = 2 * (length + width);
+        System.out.println(" the perimeter of rectangle is : " + result);
     }
 
     public static void main(String[] args) {
         Rectangle rec = new Rectangle(5, 3);
-        rec.displayDetails();
+        rec.calculatePerimeter();
+        rec.calculateArea();
     }
 }
 
@@ -375,33 +369,26 @@ public class Car {
     private double price;
 
     public Car() {
-        this.brand = "Kia";
-        this.model = "Seltos";
-        this.price = 1800000.80;
+        System.out.println("Brand");
+        System.out.println("Model");
+        System.out.println("Price");
     }
 
     public Car(String brand, String model, double price) {
         this.brand = brand;
         this.model = model;
         this.price = price;
-    }
-    
-    public void displayCarInfo() {
         System.out.println("Brand: " + brand);
         System.out.println("Model: " + model);
         System.out.println("Price: " + price);
     }
 
     public static void main(String[] args) {
+        System.out.println("Car 1 Details");        
         Car car1 = new Car();
-        System.out.println("Car 1 Details");
-        car1.displayCarInfo();
-
         System.out.println();
-
-        Car car2 = new Car("Toyota", "Fortuner", 5500000.99);
         System.out.println("Car 2 Details:");
-        car2.displayCarInfo();
+        Car car2 = new Car("Toyota", "Fortuner", 5500000.99);
     }
 }
 
